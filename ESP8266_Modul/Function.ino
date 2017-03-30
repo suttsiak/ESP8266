@@ -14,7 +14,7 @@ void TCP_SEND(void){
   client.print("\t\t");
   client.print(temperature, 1);
   client.print("\t\t");
-  client.println(dht.toFahrenheit(temperature), 1);
+//  client.println(dht.toFahrenheit(temperature), 1);
   client.flush();
   
 }
@@ -23,10 +23,13 @@ void LCD_Count(void){
     lcd.print(Counter);
 }
 void Read_DHT(void){
-  delay(dht.getMinimumSamplingPeriod());
+ // delay(dht.getMinimumSamplingPeriod());
 
-   humidity = dht.getHumidity(); // ดึงค่าความชื้น
-   temperature = dht.getTemperature(); // ดึงค่าอุณหภูมิ
+ //  humidity = dht.getHumidity(); // ดึงค่าความชื้น
+ //  temperature = dht.getTemperature(); // ดึงค่าอุณหภูมิ
+
+    humidity = dht.readHumidity();
+    temperature = dht.readTemperature();
 /*
   Serial.print(dht.getStatusString());
   Serial.print("\t");
@@ -205,7 +208,8 @@ void Init_LCD(void){
    lcd.begin();  
 }
 void Init_DHT(void){
-   dht.setup(12); // data pin 2
+  // dht.setup(12); // data pin 2
+     dht.begin();
 }
 
 void Init_Serial(void){

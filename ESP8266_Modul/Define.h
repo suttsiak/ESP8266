@@ -2,6 +2,9 @@
 #define TFT_DC 2     //GPIO2 = D4
 //#define TFT_CS 5   //GPIO5 = D1
 #define TFT_CS 16    //GPIO16  = D0
+//****************   DHT22 **********************
+#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+#define DHTPIN D5
 //****************  TFT Color ********************
 #define BLACK 0x0000
 #define BLUE  0x001F
@@ -24,7 +27,7 @@
 //const char* password = "";
 
 const char* ssid     = "3bb-wlan";
-const char* password = "1111100000";
+const char* password = "xxxxxxxxxxxx";
 
 
 
